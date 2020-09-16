@@ -10,7 +10,9 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
-app.listen(5000, () => {
+var port = process.env.PORT || 8080;
+
+app.listen(port, () => {
 	console.log("The server started on port 5000");
 });
 
