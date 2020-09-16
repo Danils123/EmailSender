@@ -32,7 +32,8 @@ app.post("/sendmail", (req, res) => {
 });
 
 const sendMail = (user, callback) => {
-	const filePath = path.join(__dirname, "../public/pages/email.html");
+	// const filePath = path.join(__dirname, "../public/pages/email.html");
+	const filePath = "https://firebasestorage.googleapis.com/v0/b/profesional-portfolio.appspot.com/o/email.html?alt=media&token=ec2d0d8a-52a0-4336-b9f7-c93b3a8fd522";
 	const source = fs.readFileSync(filePath, "utf-8").toString();
 	const template = handlebars.compile(source);
 	const replacements = {
