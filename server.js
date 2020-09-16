@@ -42,7 +42,7 @@ const sendMail = (user, callback) => {
 	const mailOptions = {
 		from: `"barrientosd9@gmail.com`,
 		to: `<${user.email}>`,
-		subject: "<Message subject>",
+		subject: "Resume Daniel Ramírez",
 		html: htmlToSend,
 		attachments: [
 			{
