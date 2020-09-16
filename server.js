@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const handlebars = require("handlebars");
 const path = require("path");
-const app = express();
+const app = express(express.static(__dirname + "/public"));
 
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
@@ -32,8 +32,7 @@ app.post("/sendmail", (req, res) => {
 });
 
 const sendMail = (user, callback) => {
-	// const filePath = path.join(__dirname, "../public/pages/email.html");
-	const filePath = "https://firebasestorage.googleapis.com/v0/b/profesional-portfolio.appspot.com/o/email.html?alt=media&token=ec2d0d8a-52a0-4336-b9f7-c93b3a8fd522";
+	const filePath = path.join(__dirname, "/public/pages/email.html");
 	const source = fs.readFileSync(filePath, "utf-8").toString();
 	const template = handlebars.compile(source);
 	const replacements = {
