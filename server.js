@@ -7,13 +7,11 @@ const handlebars = require("handlebars");
 const path = require("path");
 const app = express();
 
-const templateURL = "https://firebasestorage.googleapis.com/v0/b/profesional-portfolio.appspot.com/o/email.html?alt=media&token=ec2d0d8a-52a0-4336-b9f7-c93b3a8fd522";
-
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
-app.listen(3000, () => {
-	console.log("The server started on port 3000");
+app.listen(5000, () => {
+	console.log("The server started on port 5000");
 });
 
 app.post("/sendmail", (req, res) => {
