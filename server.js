@@ -10,10 +10,10 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-	console.log("The server started on port 5000");
+	console.log("The server started on port " + port);
 });
 
 app.post("/sendmail", (req, res) => {
