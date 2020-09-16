@@ -32,7 +32,7 @@ app.post("/sendmail", (req, res) => {
 });
 
 const sendMail = (user, callback) => {
-	const filePath = path.join(__dirname, "app/public/pages/email.html");
+	const filePath = path.join(__dirname, "./app/public/pages/email.html");
 	const source = fs.readFileSync(filePath, "utf-8").toString();
 	const template = handlebars.compile(source);
 	const replacements = {
